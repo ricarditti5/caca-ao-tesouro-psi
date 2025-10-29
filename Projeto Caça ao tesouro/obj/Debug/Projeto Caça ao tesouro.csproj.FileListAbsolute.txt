@@ -1,0 +1,18 @@
+C:\Users\Utilizador\Documents\PSI\2-Ano\M9\Projeto Caça ao tesouro\Projeto Caça ao tesouro\bin\Debug\Projeto Caça ao tesouro.exe.config
+C:\Users\Utilizador\Documents\PSI\2-Ano\M9\Projeto Caça ao tesouro\Projeto Caça ao tesouro\bin\Debug\Projeto Caça ao tesouro.exe
+C:\Users\Utilizador\Documents\PSI\2-Ano\M9\Projeto Caça ao tesouro\Projeto Caça ao tesouro\bin\Debug\Projeto Caça ao tesouro.pdb
+C:\Users\Utilizador\Documents\PSI\2-Ano\M9\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto Caça ao tesouro.csprojResolveAssemblyReference.cache
+C:\Users\Utilizador\Documents\PSI\2-Ano\M9\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto_Caça_ao_tesouro.Form1.resources
+C:\Users\Utilizador\Documents\PSI\2-Ano\M9\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto_Caça_ao_tesouro.Properties.Resources.resources
+C:\Users\Utilizador\Documents\PSI\2-Ano\M9\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto Caça ao tesouro.csproj.GenerateResource.Cache
+C:\Users\Utilizador\Documents\PSI\2-Ano\M9\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto Caça ao tesouro.exe
+C:\Users\Utilizador\Documents\PSI\2-Ano\M9\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto Caça ao tesouro.pdb
+C:\Users\Utilizador\Documents\PSI\2-Ano\Projetos\Projeto Caça ao tesouro\Projeto Caça ao tesouro\bin\Debug\Projeto Caça ao tesouro.exe.config
+C:\Users\Utilizador\Documents\PSI\2-Ano\Projetos\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto Caça ao tesouro.exe
+C:\Users\Utilizador\Documents\PSI\2-Ano\Projetos\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto Caça ao tesouro.pdb
+C:\Users\Utilizador\Documents\PSI\2-Ano\Projetos\Projeto Caça ao tesouro\Projeto Caça ao tesouro\bin\Debug\Projeto Caça ao tesouro.exe
+C:\Users\Utilizador\Documents\PSI\2-Ano\Projetos\Projeto Caça ao tesouro\Projeto Caça ao tesouro\bin\Debug\Projeto Caça ao tesouro.pdb
+C:\Users\Utilizador\Documents\PSI\2-Ano\Projetos\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto Caça ao tesouro.csprojResolveAssemblyReference.cache
+C:\Users\Utilizador\Documents\PSI\2-Ano\Projetos\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto_Caça_ao_tesouro.Form1.resources
+C:\Users\Utilizador\Documents\PSI\2-Ano\Projetos\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto_Caça_ao_tesouro.Properties.Resources.resources
+C:\Users\Utilizador\Documents\PSI\2-Ano\Projetos\Projeto Caça ao tesouro\Projeto Caça ao tesouro\obj\Debug\Projeto Caça ao tesouro.csproj.GenerateResource.Cache
