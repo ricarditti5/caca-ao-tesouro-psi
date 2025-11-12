@@ -39,24 +39,30 @@ namespace Projeto_Caça_ao_tesouro
             jogo.NumTentativas();
 
             string dica = jogo.GerarDica(index);
-            int tentativasRestantes = jogo.MaxTentativas - jogo.Tentativas;
-            MessageBox.Show("Nada aqui... " + dica);
-            lblTentativas.Text = "Tens " + tentativasRestantes.ToString() + " Restantes";
-            btn.Text = "💀";
+            int tentativasRestantes;
 
-            if (jogo.Tentativas >= jogo.MaxTentativas)
+            if (index != jogo.PosicaoTesouro)
             {
-                MessageBox.Show("💀 Fim de jogo! O tesouro ficou escondido... Perdeste!");
-                DesativarTodosOsBotoes();
+                tentativasRestantes = jogo.MaxTentativas - jogo.Tentativas;
+                MessageBox.Show(" Nada aqui...  " + dica);
+                lblTentativas.Text = "Tens " + tentativasRestantes.ToString() + " Restantes ";
+                btn.Text = "💀";
             }
 
-            if (index == jogo.PosicaoTesouro)
-            {
-                pictureBox1.Visible = true;
-                MessageBox.Show("🎉 Parabéns! Encontraste o tesouro!", "Tesouro Encontrado com " + tentativasRestantes + " Tentativas de Sobra");
-                DesativarTodosOsBotoes();
-                return;
-            }
+                else if (index == jogo.PosicaoTesouro)
+                {
+                    tentativasRestantes = jogo.MaxTentativas - jogo.Tentativas;
+                    pictureBox1.Visible = true;
+                    MessageBox.Show(" 🎉 Parabéns! Encontraste o tesouro! " + " Tesouro Encontrado com " + tentativasRestantes + " Tentativas de Sobra ");
+                    DesativarTodosOsBotoes();
+                    return;
+                }
+
+                else if (jogo.Tentativas >= jogo.MaxTentativas)
+                {
+                    MessageBox.Show(" 💀 Fim de jogo! O tesouro ficou escondido... Perdeste! ");
+                    DesativarTodosOsBotoes();
+                }
         }
        
         //Função para Desativar os Botoes
