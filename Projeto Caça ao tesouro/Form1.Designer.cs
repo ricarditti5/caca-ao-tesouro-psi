@@ -221,15 +221,16 @@
             this.btnSair.TabIndex = 20;
             this.btnSair.Text = "Abandonar o Jogo";
             this.btnSair.UseVisualStyleBackColor = true;
-            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            this.btnSair.Click += new System.EventHandler(this.BtnSair_Click);
             // 
             // lblTentativas
             // 
             this.lblTentativas.AutoSize = true;
             this.lblTentativas.Location = new System.Drawing.Point(13, 66);
             this.lblTentativas.Name = "lblTentativas";
-            this.lblTentativas.Size = new System.Drawing.Size(0, 13);
+            this.lblTentativas.Size = new System.Drawing.Size(34, 13);
             this.lblTentativas.TabIndex = 22;
+            this.lblTentativas.Text = "Texto";
             // 
             // pictureBox1
             // 
@@ -250,7 +251,7 @@
             this.btnReset.TabIndex = 24;
             this.btnReset.Text = "Reiniciar o Jogo";
             this.btnReset.UseVisualStyleBackColor = true;
-            this.btnReset.Click += new System.EventHandler(this.btnReset_Click_1);
+            this.btnReset.Click += new System.EventHandler(this.BtnReset_Click_1);
             // 
             // Form1
             // 

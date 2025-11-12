@@ -12,66 +12,78 @@ namespace Projeto_Caça_ao_tesouro
 {
     public partial class Form1 : Form
     {
-        private int tentativas = 0;
-        private const int MAX_TENTATIVAS = 4;
-        private Random random = new Random();
-        private int posicaoTesouro;
+        private GameManager jogo;
 
         public Form1()
         {
             InitializeComponent();
             pictureBox1.Visible = false;
-            IniciarNovoJogo();
+            jogo = new GameManager();
+            lblTentativas.Text = "Tens " + jogo.MaxTentativas.ToString() + " Restantes";
+            jogo.IniciarNovoJogo();
         }
         //Botao para sair do Form
-        private void btnSair_Click(object sender, EventArgs e)
+        private void BtnSair_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-        //Função para Iniciar o jogo
-        private void IniciarNovoJogo()
-        {
-            tentativas = 0;
-            pictureBox1.Visible = false;
-            posicaoTesouro = random.Next(1, 17); // 1 a 16
-        }
-        //Função para gerar numeros aleatorios
-        public int gerarNúmero()
-        {
-            Random randomNum = new Random();
-            int num = randomNum.Next(1, 20);
-            return num;
         }
         //Função  para Processar o numero dos cliques
         private void ProcessarClique(int index)
         {
-            if (tentativas >= MAX_TENTATIVAS)
-                return;
+            if (jogo.LimiteTentativas())    return;
 
-            Button btn = this.Controls.Find("btn" + index, true).FirstOrDefault() as Button;
+            Button btn = Controls.Find("btn" + index, true).FirstOrDefault() as Button;
             if (btn == null) return;
 
             btn.Enabled = false;
-            tentativas++;
+            jogo.NumTentativas();
 
-            if (index == posicaoTesouro)
-            {
-                pictureBox1.Visible = true;
-                MessageBox.Show("🎉 Parabéns! Encontraste o tesouro!", "Tesouro Encontrado");
-                DesabilitarTodosBotoes();
-                return;
-            }
-
-            string dica = GerarDica(index);
-            int tentativasRestantes = MAX_TENTATIVAS - tentativas;
-            MessageBox.Show("Nada aqui... " + dica + "\nTentativas restantes: " + tentativasRestantes);
+            string dica = jogo.GerarDica(index);
+            int tentativasRestantes = jogo.MaxTentativas - jogo.Tentativas;
+            MessageBox.Show("Nada aqui... " + dica);
+            lblTentativas.Text = "Tens " + tentativasRestantes.ToString() + " Restantes";
             btn.Text = "💀";
 
-            if (tentativas >= MAX_TENTATIVAS)
+            if (jogo.Tentativas >= jogo.MaxTentativas)
             {
-                MessageBox.Show("💀 Fim de jogo! O tesouro ficou escondido...", "Perdeste!");
-                DesabilitarTodosBotoes();
+                MessageBox.Show("💀 Fim de jogo! O tesouro ficou escondido... Perdeste!");
+                DesativarTodosOsBotoes();
             }
+
+            if (index == jogo.PosicaoTesouro)
+            {
+                pictureBox1.Visible = true;
+                MessageBox.Show("🎉 Parabéns! Encontraste o tesouro!", "Tesouro Encontrado com " + tentativasRestantes + " Tentativas de Sobra");
+                DesativarTodosOsBotoes();
+                return;
+            }
+        }
+       
+        //Função para Desativar os Botoes
+        private void DesativarTodosOsBotoes()
+        {
+            for (int i = 1; i <= 16; i++)
+            {
+                Button btn = Controls.Find("btn" + i, true).FirstOrDefault() as Button;
+                if (btn != null)
+                    btn.Enabled = false;
+            }
+        }
+
+        private void BtnReset_Click_1(object sender, EventArgs e)
+        {
+            for (int i = 1; i <= 16; i++)
+            {
+                Button btn = Controls.Find("btn" + i, true).FirstOrDefault() as Button;
+                if (btn != null)
+                {
+                    btn.Enabled = true;
+                    btn.Text = "X";
+                }
+            }
+            pictureBox1.Visible = false;
+            jogo.IniciarNovoJogo();
+            MessageBox.Show("🔄 Novo jogo iniciado! Boa sorte!");
         }
         private void btn1_Click(object sender, EventArgs e)
         {
@@ -151,56 +163,6 @@ namespace Projeto_Caça_ao_tesouro
         private void btn16_Click(object sender, EventArgs e)
         {
             ProcessarClique(16);
-        }
-
-        private string GerarDica(int index)
-        {
-            // Converter de 1-16 para 0-15 para cálculos->cchatgpt
-            int idx = index - 1;
-            int tesouroIdx = posicaoTesouro - 1;
-
-            int linhaClicada = idx / 4;
-            int colunaClicada = idx % 4;
-            int linhaTesouro = tesouroIdx / 4;
-            int colunaTesouro = tesouroIdx % 4;
-
-            int distancia = Math.Abs(linhaClicada - linhaTesouro) + Math.Abs(colunaClicada - colunaTesouro);
-
-            if (distancia == 0)
-                return "Encontraste o tesouro!";
-            else if (distancia == 1)
-                return "🔥 Está MUITO perto! Ao lado!";
-            else if (distancia == 2)
-                return "Está perto!";
-            else if (distancia <= 4)
-                return "Tens uma pista quente...";
-            else
-                return "Está bem longe!";
-        }
-        private void DesabilitarTodosBotoes()
-        {
-            for (int i = 1; i <= 16; i++)
-            {
-                Button btn = this.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
-                if (btn != null)
-                    btn.Enabled = false;
-            }
-        }
-
-        private void btnReset_Click_1(object sender, EventArgs e)
-        {
-            for (int i = 1; i <= 16; i++)
-            {
-                Button btn = this.Controls.Find("btn" + i, true).FirstOrDefault() as Button;
-                if (btn != null)
-                {
-                    btn.Enabled = true;
-                    btn.Text = "X";
-                }
-            }
-
-            IniciarNovoJogo();
-            MessageBox.Show("🔄 Novo jogo iniciado! Boa sorte!", "Reset");
-        }
+        }        
     }
 }
