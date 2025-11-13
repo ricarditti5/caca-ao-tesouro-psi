@@ -27,7 +27,7 @@ namespace Projeto_Caça_ao_tesouro
         {
             Application.Exit();
         }
-        //Função  para Processar o numero dos cliques
+        //Função  para Processar os cliques e validar se o tesouro está no botao 
         private void ProcessarClique(int index)
         {
             if (jogo.LimiteTentativas())    return;
@@ -172,3 +172,4 @@ namespace Projeto_Caça_ao_tesouro
         }        
     }
 }
+    
